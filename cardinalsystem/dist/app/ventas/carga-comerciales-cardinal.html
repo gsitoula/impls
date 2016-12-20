@@ -1,0 +1,29 @@
+<section class="panel panel-default">
+    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Carga Responsables Cardinal</strong></div>
+    <div class="panel-body">
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-md-12">
+                    <button ng-click="nuevoComercial()" class="btn btn-primary btn-round btn-w-md btn-gap-v pull-right">
+                        <span class="glyphicon glyphicon-arrow-down"></span>Carga Resp. Cardinal</button>
+                    </div>
+                </div> 
+            </div>
+            <table ng-table="tableComerciales" class="table table-striped" show-filter="true">
+                <tr ng-repeat="comercial in $data">
+                    <td title="'Puesto'" filter="{PUESTO:'text'}" sortable="'PUESTO'">
+                        {{comercial.PUESTO}}
+                    </td>
+                    <td title="'Nombre y Apellido'" filter="{NOMBRE_APELLIDO:'text'}" sortable="'NOMBRE_APELLIDO'">
+                        {{comercial.NOMBRE_APELLIDO}}
+                    </td>
+                    <td title="'Telefono'" filter="{TELEFONO:'number'}" sortable="'TELEFONO'">
+                        {{comercial.TELEFONO}}
+                    </td>
+                    <td title="'Email'" filter="{EMAIL:'text'}" sortable="'EMAIL'">
+                        {{comercial.EMAIL}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+</section>

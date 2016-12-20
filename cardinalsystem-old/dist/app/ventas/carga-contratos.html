@@ -1,0 +1,282 @@
+<div class="page page-form" data-ng-controller="cargaContratosCtrl">
+
+    <!-- <div class="panel panel-default" data-ng-controller="formConstraintsCtrl"> -->
+        
+    <section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Contrato</strong></div>
+        
+        <div class="panel-body" data-ng-controller="DatepickerDemoCtrl">
+
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+
+<!-- INICIO Panel Contrato -->      
+<section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Dato de Cliente</strong></div>
+
+        <div class="panel-body">
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                <div class="form-group">
+                    <div class="row">
+                           <div class="col-md-4" class="input-group">
+                            <label for="">Cliente</label>
+                                <!--<div class="input-group">-->
+                                    <input type="text" 
+                                           class="form-control"
+                                           data-ng-model="form.cliente"
+                                           uib-typeahead="cliente.NOM_COM for cliente in clientes_array | filter:$viewValue | limitTo:8"
+                                           typeahead-on-select="onSelectCliente($item, $model, $label)"
+                                        >
+                                    <!--</div>-->
+                                    <span></span>
+                            </div>
+                            <div class="col-md-4">
+                            <label for=""> Dirección Comercial</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        data-ng-model="direccionComercial"
+                                        required
+                                        ng-disabled="true"
+                                        >
+                                <span></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label for=""> Teléfono</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        data-ng-model="telefonoComercial"
+                                        required
+                                        data-ng-model="form.telefono"
+                                        ng-disabled="true"
+                                >
+                                <span></span>
+                            </div>
+                    </div>                            
+                    <div class="row">
+
+                        <div class="col-md-3">
+                                <label for="">Fecha Inicio de Operación</label>
+                                <div class="input-group ui-datepicker" data-ng-controller="DatepickerDemoCtrl">
+                        <input type="text" 
+                               class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="form.fecha_inicio"
+                               is-open="popup1.opened"
+                               min-date="minDate"
+                               max-date="maxDate"
+                               datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)"
+                               ng-required="true"
+                               close-text="Close"
+                               alt-input-formats="altInputFormats" />
+                        <span class="input-group-addon" ng-click="open1()"><i class="ti-calendar"></i></span>
+                    </div>
+                            </div>
+
+                            <div class="col-md-3">
+                            <label for="">Fecha Fin de Operación</label>
+                               <div class="input-group ui-datepicker" data-ng-controller="DatepickerDemoCtrl">
+                        <input type="text" 
+                               class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="form.fecha_fin"
+                               is-open="popup1.opened"
+                               min-date="minDate"
+                               max-date="maxDate"
+                               datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)"
+                               ng-required="true"
+                               close-text="Close"
+                               alt-input-formats="altInputFormats" />
+                        <span class="input-group-addon" ng-click="open1()"><i class="ti-calendar"></i></span>
+                    </div>
+                            </div>
+                            
+                            <div class="col-md-3">
+                                <label for="">Estado del Contrato</label>
+                                 <span class="ui-select">
+                                        <select ng-model="form.estado">
+                                            <option value="En Definición">En Definición</option>
+                                            <option value="Planificado">Planificado</option>
+                                            <option value="Productivo">Productivo</option>
+                                            <option value="Cancelado">Cancelado</option>
+                                            <option value="Finalizado">Finalizado</option>
+                                        </select>
+                                  </span>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="">Contrato Scaneado</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" ng-model="form.contrato_doc">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Subir</button>
+                                        </span>
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+<!-- FIN Panel Contrato -->
+
+<!-- INICIO Panel Comercial -->      
+<section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Dato de Comercial Cardinal</strong></div>
+
+        <div class="panel-body">
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4"> 
+                            <label for=""> Nombre y Apellido</label>
+                                <!--<div class="input-group">-->
+                                    <input type="text" 
+                                           class="form-control"
+                                           data-ng-model="form.comercial_cardinal"
+                                           uib-typeahead="comercial.nombre_real for comercial in comerciales_array | filter:$viewValue | limitTo:8"
+                                           typeahead-on-select="onSelectComerc($item, $model, $label)"
+                                        >
+                                <!--</div>-->
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> eMail</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        data-ng-model="respComercEmail"
+                                        required
+                                        ng-disabled="true"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> Rol/Puesto</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        data-ng-model="respComercRol"
+                                        required
+                                        ng-disabled="true"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Teléfono</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        data-ng-model="respComercNumTel"
+                                        required
+                                        ng-disabled="true"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Tel.Celular</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        data-ng-model="respComercNumCel"
+                                        required
+                                        ng-disabled="true"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+<!-- FIN Panel Comercial -->
+
+
+
+<!-- INICIO Panel Comisión -->      
+<section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Tarifas/Comisiones Acordadas</strong></div>
+
+        <div class="panel-body">
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for=""> Tarifa por puesto/hora fijo</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.puesto_hora"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> Comisión</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.comision"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> Cantidad Hs Presenciales</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.hs_presenciales"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">VPH</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.vph"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Indice Multiplicador</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.indice_mult"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+<!-- FIN Panel Comisión -->
+
+<!-- INICIO Botonera -->
+<section class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="btn-toolbar pull-right">
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-default" ng-click="volverContrCamps()">Cancelar</button>
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="guardarContrato()">Guardar Contrato</button> <!-- ng-click="guardarContrato()" ng-click="asociarCampana()" -->
+                          <!--<button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="asociarCampana()">Cargar Campaña al Contrato</button>-->
+                       </div>
+                    </div>
+                </div>
+        </div>
+</section>
+<!-- FIN Botonera -->
+
+</div>
+    
+<!-- </div> -->

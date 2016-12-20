@@ -1,0 +1,18 @@
+<div class="page page-form" ng-controller="uploadContratoCtrl">
+
+	<!-- <div class="panel panel-default" data-ng-controller="formConstraintsCtrl"> -->
+
+	<section class="panel panel-default">
+
+		<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Contrato</strong></div>
+		<div class="panel-body">
+			<input type="file" nv-file-select uploader="uploader"/><br/>
+			<ul>
+            <li ng-repeat="item in uploader.queue">
+                Name: <span ng-bind="item.file.name"></span><br/>
+                <button ng-click="item.upload()">upload</button>
+            </li>
+        </ul>
+		</div>
+	</section>
+</div>        

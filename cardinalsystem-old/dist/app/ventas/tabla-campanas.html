@@ -1,0 +1,39 @@
+<div id="ventas" class="page" data-ng-controller="tablaCampanasCtrl">
+    <!-- INICIO SECCION CAMPAÑAS ASIGNADAS -->
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Campañas</strong></div>
+        <div class="panel-body">
+            <div class="table-filters">
+            <div class="row">
+                <div class="col-md-2 pull-right">
+                    <button ng-click="nuevaCampana()" class="btn btn-primary btn-round btn-w-md btn-gap-v">
+                    <span class="glyphicon glyphicon-arrow-down"></span>Nueva Campaña</button>
+                </div>
+              <!--  <div class="col-md-2 pull-right">
+                    <button ng-click="nuevaAsigCamp()" class="btn btn-primary btn-round btn-w-md btn-gap-v">
+                    <span class="glyphicon glyphicon-arrow-down"></span>Nueva Campaña</button>
+                </div> -->
+            </div> 
+        </div>
+        <table ng-table="tableCampanas" class="table table-striped" show-filter="true">
+            <tr ng-repeat="campana in $data">
+                <td title="'Nombre de la Campaña'" filter="{CAMPANA:'text'}" sortable="'CAMPANA'">
+                    {{campana.CAMPANA}}</td>
+                <td title="'Cliente'">
+                    {{campana.CLIENTE.nombre}}</td>
+                <td title="'Fecha Fin de Operaciones'" filter="{CAMPANA_FECHA_FIN:'text'}" sortable="'CAMPANA_FECHA_FIN'">
+                    {{campana.CAMPANA_FECHA_FIN}}</td>
+                <!--<td title="'Estado de Campaña'" filter="{ESTADO:'text'}" sortable="'ESTADO'">
+                    {{campana_asignada.ESTADO}}</td>-->
+                <!--    
+                <td title="'Editar'">
+                    <div>
+                        <button class="btn btn-default btn-round" ng-click="verDetalle(campana_asignada._id)"><i class="ti-receipt"></i></button><span>  </span>
+                    </div>
+                </td> --> 
+            </tr>
+        </table>
+        </div>
+    </section>
+    <!-- FIN SECCION CAMPAÑAS ASIGNADAS -->
+</div>

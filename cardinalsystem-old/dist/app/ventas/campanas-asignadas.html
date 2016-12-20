@@ -1,0 +1,34 @@
+<div id="ventas" class="page" data-ng-controller="campanasAsignadasCtrl">
+    <!-- INICIO SECCION CAMPAÑAS ASIGNADAS -->
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Campañas Asignadas</strong></div>
+        <div class="panel-body">
+            <div class="table-filters">
+            <div class="row">
+                <div class="col-md-3 pull-right"><button ng-click="nuevaAsigCamp()" class="btn btn-primary btn-round btn-w-md btn-gap-v">
+            <span class="glyphicon glyphicon-arrow-down"></span>
+            Asignar Nueva Campaña</button></div>
+            </div>
+        </div>
+        <table ng-table="tableParams" class="table table-striped" show-filter="true">
+            <tr ng-repeat="campana_asignada in $data">
+                <td title="'Cliente'" filter="{CLIENTE:'text'}" sortable="'CLIENTE'">
+                    {{campana_asignada.CLIENTE}}</td>
+                <td title="'Campaña'" filter="{CAMPANA:'text'}" sortable="'CAMPANA'">
+                    {{campana_asignada.CAMPANA}}</td>
+                <td title="'Fin de Campaña'" filter="{FECHA_FIN_OPE:'text'}" sortable="'FECHA_FIN_OPE'">
+                    {{campana_asignada.FECHA_FIN_OPE}}</td>
+                <td title="'Estado de Campaña'" filter="{ESTADO:'text'}" sortable="'ESTADO'">
+                    {{campana_asignada.ESTADO}}</td>
+
+                <td title="'Reasignar Operadores'">
+                    <div>
+                        <button class="btn btn-default btn-round" ng-click="verDetalle(campana_asignada._id)"><i class="ti-receipt"></i></button><span>  </span>
+                    </div>
+                    </td>
+            </tr>
+        </table>
+        </div>
+    </section>
+    <!-- FIN SECCION CAMPAÑAS ASIGNADAS -->
+</div>

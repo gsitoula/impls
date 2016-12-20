@@ -1,0 +1,107 @@
+<section class="panel panel-default">
+    <div class="panel-heading"><span class="glyphicon glyphicon-th"></span> Modal</div>
+    <div class="panel-body">
+        <section class="panel panel-default">
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="">Cliente</label>
+                        <div class="input-group col-md-12">
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                data-ng-model="form.cliente"
+                                uib-typeahead="cliente.NOM_COM for cliente in clientes_array | filter:$viewValue | limitTo:8"
+                                typeahead-on-select="onSelectCliente($item, $model, $label)"
+                            >
+                        </div>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Puesto</label>
+                        <div class="input-group">
+                            <input 
+                            type="text" 
+                            class="form-control" 
+                            data-ng-model="comercial_cliente.puesto">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Perfil</label>
+                        <div class="input-group">
+                            <input 
+                            type="text" 
+                            class="form-control" 
+                            required 
+                            data-ng-model="comercial_cliente.perfil">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Nombre y Apellido</label>
+                        <div class="input-group">
+                            <input 
+                            type="text" 
+                            class="form-control" 
+                            data-ng-model="comercial_cliente.nombre_apellido">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Teléfono</label>
+                        <div class="input-group">
+                            <input 
+                            type="number"
+                            min="0" 
+                            class="form-control" 
+                            required
+                            data-ng-model="comercial_cliente.telefono">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">    
+                    <div class="col-md-6">
+                        <label for="">Email</label>
+                        <input  
+                        type="text"
+                        class="form-control"
+                        required
+                        data-ng-model="comercial_cliente.email"
+                        >
+                        <span></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Skype ID</label>
+                        <input  
+                        type="text"
+                        class="form-control"
+                        required
+                        data-ng-model="comercial_cliente.skype_id"
+                        >
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FIN Panel Campañas -->
+
+
+        <!-- INICIO Botonera -->
+        <section class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="btn-toolbar pull-right">
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-default" ng-click="cancelarAlta()">Cancelar</button>
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="guardarComercial()">Guardar Campaña</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </div>
+</section>

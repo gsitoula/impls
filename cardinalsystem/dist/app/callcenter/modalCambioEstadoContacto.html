@@ -1,0 +1,54 @@
+<section class="panel panel-default">
+    <div class="panel-heading"><span class="glyphicon glyphicon-th"></span> Registro de Llamado</div>
+    <div class="panel-body">
+
+    <section class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="">Estado Actual del Contacto</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" data-ng-model="estado_contacto" ng-disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for=""> Nuevo Estado</label><br>
+                        <span class="ui-select">
+                            <select data-ng-model="nuevo_estado_contacto">
+                                <option value="0">Inicializado</option>
+                                <option value="1">Primer Llamado</option>
+                                <option value="2">Segundo Llamado</option>
+                                <option value="3">Cierre</option>
+                                <option value="4">Llamado de Cortesia</option>
+                            </select>
+                        </span>
+                </div>
+            </div>
+            <div class="row">
+                <label for="" class="col-sm-1">Motivo</label><br>
+                    <div class="col-sm-11">
+                        <textarea name="" id="" class="form-control" data-ng-model="motivo_contacto" rows="4"></textarea>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN Panel Campañas -->
+
+
+    <!-- INICIO Botonera -->
+    <section class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-10">
+                    <div class="btn-toolbar pull-right">
+                      <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="cancelarCambio()">Cancelar</button>
+                      <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-default" ng-click="guardarEstado()">Guardar Nuevo Estado</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>
+</section>

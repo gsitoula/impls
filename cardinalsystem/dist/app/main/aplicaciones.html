@@ -1,0 +1,37 @@
+<div class="page" data-ng-controller="userData">
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="glyphicon glyphicon-th"></span> Aplicaciones</div>
+        <div class="panel-body">
+
+            <div class="row">
+                <!-- Iconos de las Aplicaciones -->
+                <div class="col-md-3" ng-repeat="data in datas">
+                    
+					<a data-ng-click="menusFunction(data.name)" href="{{data.url}}">
+					<article class="icon-box icon-box-vertical">
+                        
+						
+						<div class="icon-container bg-primary">
+                            
+							<span class="{{data.icon}} bg-primary"></span>
+							
+                        </div>
+						
+						
+                        <div class="desc-container">
+                            <h4>{{data.name}}</h4> <!-- Gestión de Call Center Ventas y Sponsoring {{data.descripcion}} -->
+                            <div class="desc">{{data.descripcion}}</div>
+                        </div>
+                    </article>
+					</a>
+					
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,41 @@
+<div class="page page-form" ng-controller="importCampanaCtrl">
+
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Archivos Importados</strong></div>
+        <div class="panel-body">
+            <div class="container col-md-12">   
+                <div class="row">
+                    <table class="table table-bordered">
+                        <thead class="thead-default">
+                            <th>
+                                Cliente 
+                            </th>
+                            <th> 
+                                Campaña
+                            </th>
+                            <th> 
+                                Archivo
+                            </th>
+                            <th> 
+                                Acciones
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="archivo in archivos">
+                                <td>{{archivo.cliente}}</td>
+                                <td>{{archivo.campana}}</td>
+                                <td>{{archivo.archivo}}</td>
+                                <td>
+                                    <button class="btn btn-default btn-round" data-ng-class="[pickChosen == 1 ? 'btn-success' : 'btn-default']" ng-click="validarCabecera(archivo)">Validar Cabecera</button>
+                                    <input type="checkbox" ng-model="check_head" hidden="true">    
+                                    <button class="btn btn-default btn-round" data-ng-class="[import_ok == 1 ? 'btn-success' : 'btn-default']" ng-click="realizarImport(archivo)" ng-disabled="check_head">Realizar Importación</button>
+                                </td>
+                            </tr>
+                        </tbody>    
+                    </table>
+                </div>
+            </div> 
+        </div>
+    </section>
+    
+</div>    

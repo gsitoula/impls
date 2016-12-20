@@ -1,0 +1,154 @@
+<div class="page page-form">
+
+    <!-- <div class="panel panel-default" data-ng-controller="formConstraintsCtrl"> -->
+        
+    <section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Cliente</strong></div>
+        
+        <div class="panel-body" data-ng-controller="DatepickerDemoCtrl">
+
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+
+<!-- INICIO Panel Compañia -->      
+<section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Datos de Empresa</strong></div>
+
+        <div class="panel-body">
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for=""> Razón Social</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.prov"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> Dirección Comercial</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.ciudad"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> Teléfono</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.ciudad"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Fecha de Alta</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.calle"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+<!-- FIN Panel Compañia -->
+
+
+<!-- INICIO Panel Contacto -->      
+<section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Dato de Contacto Cliente</strong></div>
+
+        <div class="panel-body">
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for=""> Nombre y Apellido</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.prov"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> eMail</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.ciudad"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> Rol/Puesto</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.ciudad"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Teléfono Oficina</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.calle"
+                                >
+                                <span></span>
+                        </div>
+                         <div class="col-md-4">
+                            <label for="">Tel.Celular</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.calle"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+<!-- FIN Panel Compañia -->
+
+<!-- INICIO Botonera -->
+<section class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="btn-toolbar pull-right">
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-default">Cancelar</button>
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary">Aceptar</button>
+                       </div>
+                    </div>
+                </div>
+        </div>
+</section>
+<!-- FIN Botonera -->
+
+</div>
+    
+<!-- </div> -->

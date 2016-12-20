@@ -1,0 +1,499 @@
+<div class="page page-form">
+
+    <div class="panel panel-default" data-ng-controller="formConstraintsCtrl">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Llamadas a Contactos</strong></div>
+        <div class="panel-body" data-ng-controller="DatepickerDemoCtrl">
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+			 <!-- Breadcrumbs -->
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Estados</strong></div>
+                <div class="panel-body">
+                    <ol class="breadcrumb-alt">
+                        <li><a href="javascript:;">Pendiente</a></li>
+                        <li class="bg-primary"><a href="javascript:;">Primer Llamado</a></li>
+                        <li class="active"><a href="">Segundo Llamado</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- end Breadcrumbs -->
+
+<div class="ui-timline-container">
+        <section class="ui-timeline text-left" >
+            <article class="tl-item">
+                <div class="tl-body">
+                    <div class="tl-entry">
+                        <div class="tl-caption">
+                            <a href="javascript:;" class="btn btn-primary btn-block">Today</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tl-item">
+                <div class="tl-body">
+                    <div class="tl-entry">
+                        <div class="tl-time">3 min ago</div>
+                        <div class="tl-icon btn-icon-round btn-icon btn-icon-thin btn-info"><i class="ti-shine"></i></div>
+                        <div class="tl-content">
+                            <h4 class="tl-tile text-primary">Go hiking</h4>
+                            <p>Consectetur adipisicing elit. Error, accusantium debitis voluptatem dolore excepturi ducimus fugiat nulla perspiciatis quo ipsum non eligendi nisi veniam maxime in quas atque omnis cumque!</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tl-item">
+                <div class="tl-body">
+                    <div class="tl-entry">
+                        <div class="tl-time">1 hour ago</div>
+                        <div class="tl-icon btn-icon-round btn-icon btn-icon-thin btn-warning"><i class="ti-shopping-cart"></i></div>
+                        <div class="tl-content">
+                            <h4 class="tl-tile text-danger">Buy some toys</h4>
+                            <p>Ullam, commodi, modi, impedit nostrum odio sit odit necessitatibus accusantium enim voluptates culpa cupiditate cum pariatur a recusandae tenetur aspernatur at beatae.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tl-item">
+                <div class="tl-body">
+                    <div class="tl-entry">
+                        <div class="tl-time">3 hours ago</div>
+                        <div class="tl-icon btn-icon-round btn-icon btn-icon-thin btn-success"><i class="ti-camera"></i></div>
+                        <div class="tl-content">
+                            <h4 class="tl-tile text-warning">Soluta nihil</h4>
+                            <p>Incidunt, molestias odio soluta nihil accusantium sit nostrum doloremque. Recusandae, ullam, odio consequatur facere totam reiciendis similique dicta explicabo!</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tl-item">
+                <div class="tl-body">
+                    <div class="tl-entry">
+                        <div class="tl-time">7 hours ago</div>
+                        <div class="tl-icon btn-icon-round btn-icon btn-icon-thin btn-danger"><i class="ti-check"></i></div>
+                        <div class="tl-content">
+                            <h4 class="tl-tile text-success">Odio sit odit necessitatibus</h4>
+                            <p>Ullam, commodi, modi, impedit nostrum odio sit odit necessitatibus accusantium enim voluptates culpa cupiditate cum pariatur a recusandae tenetur aspernatur at beatae.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        </div>
+
+
+
+			    <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Apellidos</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required1"
+
+                            >                        
+                            <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Nombre 1</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required2"
+
+                            >                        
+                            <span></span>
+                        </div>
+						
+						<div class="col-md-4">
+                            <label for="">Nombre 2</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required3"
+
+                            >                        
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+				
+
+			
+				<div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="">Apellidos y Nombres</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required4"
+
+                            >                        
+                            <span></span>
+                        </div>
+						
+						<!--
+						<div class="col-md-3">
+                            <label for="">Tipo de Documento</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required5"
+
+                            >                        
+                            <span></span>
+                        </div>
+						-->
+						
+						
+		<div class="col-md-3">
+
+            <!-- Select -->
+            
+					<label for="">Tipo de Documento</label>
+                    <span class="ui-select">
+                        <select>
+                            <option>DNI</option>
+                            <option>DU</option>
+                            <option>LC</option>
+                        </select>
+                    </span>
+                
+            
+            <!-- end Select -->
+
+        </div>
+						
+						
+						<div class="col-md-3">
+                            <label for="">Nro. de Documento</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required6"
+
+                            >                        
+                            <span></span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+				<div class="form-group">
+                    <div class="row">
+						<!--
+						<div class="col-md-3">
+                            <label for="">Fecha de Nacimiento</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required7"
+
+                            >                        
+                            <span></span>
+                        </div> -->
+						
+				<div class="col-md-3" >
+<label for="">Fecha de Nacimiento</label>
+                    <div class="input-group ui-datepicker">
+					
+					
+					
+                        <input type="text" 
+                               class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="dt"
+                               is-open="popup1.opened"
+                               min-date="minDate"
+                               max-date="maxDate"
+                               datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)"
+                               ng-required="true"
+                               close-text="Close"
+                               alt-input-formats="altInputFormats" />
+                        <span class="input-group-addon" ng-click="open1()"><i class="ti-calendar"></i></span>
+                    </div>
+
+                </div>
+						
+						
+						
+						<div class="col-md-3">
+                            <label for="">Edad</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required80"
+
+                            >                        
+                            <span></span>
+                        </div>
+						<!--
+						<div class="col-md-2">
+                            <label for="">Estado civil</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required7"
+
+                            >                        
+                            <span></span>
+                        </div>
+						-->
+						
+			<div class="col-md-3">
+
+            <!-- Select -->
+            
+					<label for="">Estado civil</label>
+                    <span class="ui-select">
+                        <select>
+                            <option>Soltero</option>
+                            <option>Casado</option>
+                            <option>Convive</option>
+                        </select>
+                    </span>
+                
+            
+            <!-- end Select -->
+
+        </div>
+						
+						
+						<!--
+						<div class="col-md-2">
+                            <label for="">Género</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required8"
+
+                            >                        
+                            <span></span>
+                        </div>
+						-->
+						
+		<div class="col-md-3">
+
+            <!-- Select -->
+            
+					<label for="">Género</label>
+                    <span class="ui-select">
+                        <select>
+                            <option>Masculino</option>
+                            <option>Femenino</option>
+
+                        </select>
+                    </span>
+                
+            
+            <!-- end Select -->
+
+        </div>
+						<!--
+						<div class="col-md-2">
+                            <label for="">NSE</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required7"
+
+                            >                        
+                            <span></span>
+                        </div>
+						-->
+
+
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <label for="">Correo electrónico (E-mail)</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required5"
+
+                            >                        
+                            <span></span>
+                        </div>
+						<!--
+						<div class="col-md-6">
+                            <label for="">Ocupación</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required5"
+
+                            >                        
+                            <span></span>
+                        </div>-->
+						
+					<div class="col-md-3">
+						
+					<label for="">Ocupación</label>
+                    <span class="ui-select">
+                        <select>
+                            <option>Empleado</option>
+                            <option>Trabajador independiente</option>
+
+                        </select>
+                    </span>
+						
+					</div>
+
+
+					
+					
+					
+                    </div>
+                </div>
+				
+				<div class="divider divider-dashed divider-lg pull-in"></div>
+				
+				<div class="form-group">
+                    <div class="row">
+
+						<div class="col-md-6">
+                            <label for="">Calle</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required7"
+
+                            >                        
+                            <span></span>
+                        </div>
+						<div class="col-md-2">
+                            <label for="">Altura</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required81"
+
+                            >                        
+                            <span></span>
+                        </div>
+						
+						<div class="col-md-2">
+                            <label for="">Piso</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required82"
+
+                            >                        
+                            <span></span>
+                        </div>
+						<div class="col-md-2">
+                            <label for="">Departamento</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required83"
+
+                            >                        
+                            <span></span>
+                        </div>
+	
+
+
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="">Localidad</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required9"
+
+                            >                        
+                            <span></span>
+                        </div>
+						
+						<div class="col-md-6">
+                            <label for="">Provincia</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required20"
+
+                            >                        
+                            <span></span>
+                        </div>
+
+
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="">Código Postal</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required21"
+
+                            >                        
+                            <span></span>
+                        </div>
+						
+
+
+
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Apellidos</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required10"
+
+                            >                        
+                            <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Nombre 1</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required11"
+
+                            >                        
+                            <span></span>
+                        </div>
+						
+						<div class="col-md-4">
+                            <label for="">Nombre 2</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    required
+                                    data-ng-model="form.required12"
+
+                            >                        
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+				
+	<div class="divider divider-dashed divider-lg pull-in"></div>
+
+
+    </div>
+</div>

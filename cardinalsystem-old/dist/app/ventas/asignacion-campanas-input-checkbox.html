@@ -1,0 +1,235 @@
+<div class="page page-form" data-ng-controller="asignacionCampCtrl">
+
+    <section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Asignación de Campañas</strong></div>
+        
+        <div class="panel-body">
+
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                <!-- Fila grupo -->
+                <div class="form-group">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="">Cliente</label>
+                            <div class="input-group">
+                                <input type="text" 
+                                       class="form-control" 
+                                       ng-model="form.cliente"
+                                       uib-typeahead="cliente.nombre_real for cliente in clientes_array | filter:$viewValue | limitTo:8"
+                                       typeahead-on-select="onSelectCliente($item, $model, $label)"
+                                >
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Campaña</label>
+                            <div class="input-group">
+                                <input type="text" 
+                                       class="form-control" 
+                                       ng-model="form.campana"
+                                       uib-typeahead="campana.nombre_campana for campana in campanas_array | filter:$viewValue | limitTo:8"
+                                       typeahead-on-select="onSelectCampana($item, $model, $label)"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin Fila grupo -->
+            </form>
+        </div> <!-- Cierra panel body -->
+    </section>
+    <!--Inicio Panel Campañas -->
+    <section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Información de Campaña</strong></div>
+
+        <div class="panel-body">
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Punto de Contacto</label>
+                            <input  type="text"
+                            class="form-control"
+                            required
+                            data-ng-model="form.puntodecontacto"
+                            ng-disabled="true"
+                            >
+                            <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Fecha Inicio Operación</label>
+                            <input  type="text"
+                            class="form-control"
+                            required
+                            data-ng-model="form.fechainicio"
+                            ng-disabled="true"
+                            >
+                            <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Fecha Fin Operación</label>
+                            <input  type="text"
+                            class="form-control"
+                            required
+                            data-ng-model="form.fechafin"
+                            ng-disabled="true"
+                            >
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <label for="">Responsable Comercial</label>
+                            <input  type="text"
+                            class="form-control"
+                            required
+                            data-ng-model="form.comercial"
+                            ng-disabled="true"
+                            >
+                            <span></span>
+                        </div>
+                                                
+                        <div class="col-md-4">
+                                <label for="">Nombre del Archivo</label>
+                                <input  type="text"
+                                class="form-control"
+                                required
+                                data-ng-model="form.archivo"
+                                ng-disabled="true"
+                                >
+                                <span></span>
+                            </div>
+                        
+                        <div class="col-md-4">
+                            <label for="">Estado</label>
+                                <select class="form-control" data-ng-model="form.estado">
+                                    <option value="Todos">Todos</option>
+                                </select>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- FIN Panel Campañas -->
+    <!-- INICIO Listado BDs -->
+
+    <section class="panel panel-default">
+
+    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Asignación de Grupos/Operadores</strong></div>
+    <div class="panel-body">
+        <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+          <div class="form-group">
+            <div class="row">
+                 <!--
+                <div class="col-md-6">
+                    
+                  
+                   <span>Todos los Estados</span>
+                   <span><input type="checkbox" class="ui-checkbox"></span>
+                   <ul>
+                        <li>
+                            <span>Inicio</span>
+                            <span><input type="checkbox" class="ui-checkbox"></span>
+                        </li>
+                        <li>
+                            <span>Llamado 1</span>
+                            <span><input type="checkbox" class="ui-checkbox"></span>
+                        </li>
+                        <li>
+                            <span>Llamado 2</span>
+                            <span><input type="checkbox" class="ui-checkbox"></span>
+                        </li>
+                        <li>
+                            <span>Cierre</span>
+                            <span><input type="checkbox" class="ui-checkbox"></span>
+                        </li>
+                        <li>
+                            <span>Llamado corta</span>
+                            <span><input type="checkbox" class="ui-checkbox"></span>
+                        </li>
+                    </ul>
+                </div>
+                -->
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Usuarios y Grupos</h3>
+                        </div>
+                    <div class="panel panel-body">    <!-- heading={{grupo.grupo}} -->
+                        <uib-accordion close-others="oneAtATime">    
+                            <div uib-accordion-group class="panel-default" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled"
+                        ng-repeat="grupo in grupos">
+                            <!--<div uib-accordion-heading>
+                                {{grupo.grupo}}
+                                <button class="btn btn-round btn-default" ng-click="selectCurrentGroup($event, grupo.grupo)">
+                                    Seleccionar Grupo
+                                </button>
+                            </div>-->
+                            <div uib-accordion-heading>
+                                {{grupo.grupo}}
+                                    <input type="checkbox" ng-click="selectCurrentGroup($event, grupo.grupo)"}}/>
+                                    <span> Seleccionar Grupo</span>
+                                <!-- <label class="ui-checkbox">
+                                </label> -->
+                            </div>
+                            <ul class="list-unstyled">
+                                <li ng-repeat="user in grupo.usuarios track by $index">
+                                    <label class="ui-checkbox">
+                                        <input type="checkbox" name="checkUser_{{user.name}}" ng-model=usersName[user.name] value={{user}}/>
+                                        <span> {{user.name}}</span>
+                                   </label>
+                                </li>
+                            </ul>
+                            </div>
+                        </uib-accordion >
+                    </div>
+                </div>
+              </div>
+              <!--
+              <div class="col-md-6">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">
+                            <h3 class="panel-title">Usuarios Seleccionados</h3>
+                        </div>
+                  <div class="panel panel-body">      
+                            <button class="btn btn-default btn-round" ng-click="showUsers()">Show Users</button>
+                  </div>
+                  </div>
+                  <span>{{checkUser}}</span>
+                  <span>{{usersName}}</span>
+              </div>
+              -->  
+            </div>
+            <!--Inicio Tabla con Bases de Datos-->
+        </div>
+    </div>
+</section>
+<!-- FIN Tablas Listado BDs -->
+<!-- INICIO Botonera -->
+<section class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <div class="btn-toolbar pull-right">
+                  <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-warning" ng-click="limpiarCampos()">Limpiar</button>
+                  <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-danger" ng-click="cancelarModulo()">Cancelar</button>
+                  <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="asignarCampana()">Asignar Campaña</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- FIN Botonera -->
+
+</div>
+
+<!-- </div> -->

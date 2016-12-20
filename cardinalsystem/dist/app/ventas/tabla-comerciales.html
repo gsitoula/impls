@@ -1,0 +1,46 @@
+<div id="ventas" class="page" data-ng-controller="responsablesComercialesCtrl">
+    <!-- INICIO SECCION CAMPAÑAS ASIGNADAS -->
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Carga Responsables</strong></div>
+        <div class="panel-body">
+            <div class="row">
+                
+            <div class="col-md-3 pull-right">
+                <button ui-sref="comerciales-cardinal" class="btn btn-primary btn-round">
+                       Responsables Cardinal
+                </button>
+            </div> 
+            
+            <div class="col-md-3 pull-right">
+                <button ui-sref="comerciales-clientes" class="btn btn-default btn-round">
+                        Responsables Clientes
+                </button>
+            </div>
+       </div>
+   </div>
+   <div class="panel-body">
+    <section class="panel panel-default">
+        
+        <div ui-view="responsables-cardinal"></div>
+        
+        <div ui-view="responsables-clientes"></div>
+        
+    </section>
+</div>
+
+</section>
+<!-- FIN SECCION CAMPAÑAS ASIGNADAS -->
+<section class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <div class="btn-toolbar pull-right">
+                  <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="volverMain()">Volver</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+</div>

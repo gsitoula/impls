@@ -1,0 +1,155 @@
+<div id="Callcenter" class="page" data-ng-controller="callcenterCtrl">
+
+	<section class="panel panel-default">
+		<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Estado del Contacto</strong></div>
+		<div class="panel-body">
+			<div class="label label-default" data-ng-class="{'label-success': k == success_this}" ng-repeat="(k, v) in contact_states track by $index">{{v}}</div> 
+		</div>
+	</section> 
+
+	<section class="panel panel-default">
+		<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Datos del Contacto</strong></div>
+		<div class="panel-body">
+			
+			<div class="panel panel-default">
+				<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Datos Estandar</strong></div>
+				<div class="panel-body">
+				  <div class="row">
+					
+					<div class="col-md-4">
+						<label for="">Nombre Contacto</label>
+						<div class="input-group">
+							<input type="text" class="form-control" data-ng-model="contact.nombre">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<label for="">Apellido Contacto</label>
+						<div class="input-group">
+							<input type="text" class="form-control" ng-change="change_contact()" data-ng-model="contact.apellido">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<label for="">Edad</label>
+						<div class="input-group">
+							<input type="text" class="form-control" data-ng-model="contact.edad">
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<label for="">Dni</label>
+						<div class="input-group">
+							<input type="text" class="form-control" data-ng-model="contact.dni">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<label for="">Telefono</label>
+						<div class="input-group">
+							<input type="text" class="form-control" ng-change="change_contact()" data-ng-model="contact.telefono">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<label for="">Dirección</label>
+						<div class="input-group">
+							<input type="text" class="form-control" data-ng-model="contact.direccion">
+						</div>
+					</div>
+
+				  </div>	
+				</div>	
+			</div>
+			<!--
+			<div class="panel panel-default">
+				<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Datos Adicionales</strong></div>
+				<div class="row">
+
+					<div class="col-md-4">
+						<label for="">Nombre Contacto</label>
+						<div class="input-group">
+							<input type="text" class="form-control" data-ng-model="contact.nombre">
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<label for="">Apellido Contacto</label>
+						<div class="input-group">
+							<input type="text" class="form-control" ng-change="change_contact()" data-ng-model="contact.apellido">
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<label for="">Edad</label>
+						<div class="input-group">
+							<input type="text" class="form-control" data-ng-model="contact.edad">
+						</div>
+					</div>
+
+				</div>
+			</div> 
+				-->
+		</div>
+	</section>
+
+	<section class="panel panel-default">
+		<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Script</strong></div>		
+		<div class="panel-body">
+			<div class="row">
+				<label for="" class="col-sm-1">Script de Campaña</label><br>
+				<div class="col-sm-11">
+					<textarea name="" id="" class="form-control" rows="4" data-ng-model="form.script_campana" ng-disabled="true"></textarea>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--
+	<section class="panel panel-default">
+		<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Tareas</strong></div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-12">
+					<button class="btn btn-defaul btn-round pull-right" ng-click="actualizarEstado()">Actualizar Estado</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+				</div>
+			</div>
+			<div class="row">
+			<table class="table table-bordered">
+				<thead class="thead-default">
+					<th>
+						Todos los Estados
+					</th>
+					<th> 
+						Estado Actual del Contacto
+					</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="(k, v) in contact_states track by $index">
+						<td>{{v}}</td>
+						<td>
+							<div class="label label-default" data-ng-class="{'label-success': k == success_this}">{{v}}
+							</div>
+						</td>
+					</tr>
+				</tbody>	
+			</table>
+			</div>
+		</div>
+	</section>  -->
+
+	<section class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-10">
+					<div class="btn-toolbar pull-right">
+						<button class="btn btn-default btn-round" ng-click="actualizarEstado()">Actualizar Estado</button>
+						<button type="button" class="btn btn-w-md btn-gap-v btn-round btn-default" ng-click="siguienteContacto()">Siguiente Contacto</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

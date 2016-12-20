@@ -1,0 +1,344 @@
+<div class="page page-form" data-ng-controller="cargaCampanasCtrl">
+        
+    
+<!--Inicio Panel Información de Campañas -->
+<section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Información de Campaña</strong></div>
+
+        <div class="panel-body">
+            
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Nombre de la Campaña</label>
+                            <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="form.nombre_campana">
+                                    <!--
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Buscar</button>
+                                    </span> -->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Cliente de la Campaña</label>
+                            <div class="input-group">
+                                    <input type="text" 
+                                           class="form-control"
+                                           data-ng-model="form.cliente"
+                                           uib-typeahead="cliente.nombre_real for cliente in clientes_array | filter:$viewValue | limitTo:8"
+                                           typeahead-on-select="onSelectCliente($item, $model, $label)"
+                                        >
+                                    <!--
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Buscar</button>
+                                    </span> -->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Punto de Contacto</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.punto_contacto"
+                                >
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Responsable Comercial</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.resp_comercial"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                                <label for="">Fecha Inicio de Operación</label>
+                                <div class="input-group ui-datepicker" data-ng-controller="DatepickerDemoCtrl">
+                        <input type="text" 
+                               class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="form.fecha_ini_campana"
+                               is-open="popup1.opened"
+                               min-date="minDate"
+                               max-date="maxDate"
+                               datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)"
+                               ng-required="true"
+                               close-text="Close"
+                               alt-input-formats="altInputFormats" />
+                        <span class="input-group-addon" ng-click="open1()"><i class="ti-calendar"></i></span>
+                    </div>
+                            </div>
+
+                            <div class="col-md-4">
+                            <label for="">Fecha Fin de Operación</label>
+                               <div class="input-group ui-datepicker" data-ng-controller="DatepickerDemoCtrl">
+                        <input type="text" 
+                               class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="form.fecha_fin_campana"
+                               is-open="popup1.opened"
+                               min-date="minDate"
+                               max-date="maxDate"
+                               datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)"
+                               ng-required="true"
+                               close-text="Close"
+                               alt-input-formats="altInputFormats" />
+                        <span class="input-group-addon" ng-click="open1()"><i class="ti-calendar"></i></span>
+                    </div>
+                            </div>
+                    </div>
+                </div>
+            
+        </div>
+</section>
+<!-- FIN Panel Campañas -->
+
+<!-- INICIO Detalle de Operacion -->
+<section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Detalle de Operación</strong></div>
+
+        <div class="panel-body">
+            
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for=""> Esquema de Datos</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="form.esquema_de_datos">
+                                </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for=""> Reportes/Informes a Cliente</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="form.informes_cliente">
+                                </div>
+                        </div>
+             
+                        <div class="col-md-3">
+                            <label for=""> No Call</label>
+                              <span class="ui-select">
+                                    <select data-ng-model="form.no_call">
+                                        <option value="SI">Incluye</option>
+                                        <option value="NO">No Incluye</option>
+                                    </select>
+                              </span>
+                        </div>
+                        <div class="col-md-3">
+                            <label for=""> Formulario de Campaña</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" data-ng-model="form.formulario_campana">
+                                </div>
+                        </div>
+                    </div>
+                 <div class="divider divider-dashed divider-lg pull-in"></div>
+                 <div class="form-group">
+                    <label for="" class="col-sm-1">Descripción Proceso</label><br>
+                    <div class="col-sm-11">
+                        <textarea name="" id="" class="form-control" rows="4" data-ng-model="form.descripcion_proceso"></textarea>
+                    </div>
+                 </div>
+                </div>
+            
+        </div>
+</section>
+
+<div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Requerimiento de Recursos</h3>
+                </div>
+                <div class="panel-body">
+                <!--<div class="pull-right">
+                    <button class="btn btn-round btn-default" ng-click="mostrarRecursos()">Mostrar Seleccion</button>
+                </div><br>-->
+                <div class="row">
+                    <!--<div class="col-md-4">-->
+                        <button ng-click="agregarRowRecurso()" class="col-md-1 pull-right btn btn-w-md btn-gap-v btn-round btn-default"><span class="ti-import"></span></button>
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                        <button ng-click="quitarRowRecurso()" class="col-md-1 pull-right btn btn-w-md btn-gap-v btn-round btn-default"><span class="ti-back-left"></span></button>
+                    <!--</div>-->
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="perfil">Perfil</label><br>
+                        <span class="ui-select">
+                        <select name="perfil" ng-model="perfilSelected">
+                            <option value="">Seleccione Perfil</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Team Leader">Team Leader</option>
+                            <option value="Operador">Operador</option>
+                        </select>
+                        </span>
+                        <span></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nivel">Nivel</label><br>
+                        <span  name="nivel" class="ui-select">
+                        <select ng-model="nivelSelected">
+                            <option value="">Seleccione Nivel</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Semisenior">Semisenior</option>
+                            <option value="Junior">Junior</option>
+                        </select>
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="expert">Expertise</label><br>
+                        <span  name="expert" class="ui-select">
+                        <select ng-model="expertiseSelected">
+                            <option value="">Seleccione Expertise</option>
+                            <option value="Atención al Cliente">Atención al Cliente</option>
+                            <option value="Bilingue">Bilingüe</option>
+                        </select>
+                        </span>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-4">
+                        <label for="horario">Horario</label><br>                        
+                        <span name="horario" class="ui-select">
+                        <select ng-model="horarioSelected">
+                            <option value="">Seleccione Carga Horaria</option>
+                            <option value="5hs">5hs</option>
+                            <option value="6hs">6hs</option>
+                        </select>
+                        </span>  
+                    </div>
+                    <div class="col-md-4">
+                        <label for="turno">Turno</label><br>
+                        <span name="turno" class="ui-select">
+                            <select ng-model="turnoSelected">
+                                <option value="">Seleccione el Turno</option>
+                                <option value="Noche">Noche</option>
+                                <option value="Part Time">Part Time</option>
+                            </select>
+                        </span>
+                    </div>
+                        <div class="col-md-3">
+                            <label for="cantidad">Cantidad</label><br>
+                            <span name="cantidad">
+                                <input ng-model="cantidadSelected" type="number" min="0" class="form-control" placeholder="Cantidad"/> 
+                            </span>
+                        </div>
+                    </div>
+                    <div class="divider divider-dashed divider-lg pull-in"></div>
+                    <div class="table-responsive">                
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Perfil</th>
+                            <th>Nivel</th>
+                            <th>Expertise</th>
+                            <th>Carga Horaria</th>
+                            <th>Turno</th>
+                            <th>Cantidad</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <tr ng-repeat="recurso in recursos_array">
+                            <td> 
+                                {{recurso.perfil}}
+                            </td>
+                            <td>
+                                {{recurso.nivel}}
+                            </td>
+                            <td>
+                                {{recurso.expertise}}
+                            </td>
+                            <td>
+                                {{recurso.carga_horaria}}
+                            </td>
+                            <td>
+                                {{recurso.turno}}
+                            </td>
+                            <td>
+                               {{recurso.cantidad}} 
+                            </td>
+                         </tr>
+                    </tbody>
+                </table>
+                </div>
+                
+                
+            </div>
+        </div>
+    
+
+<section class="panel panel-default">
+
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Requerimientos Tecnológicos</strong></div>
+
+        <div class="panel-body">
+            
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for=""> Hardware</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.req_hardware"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> Software</label>
+                                <input  type="text"
+                                        class="form-control"
+                                        required
+                                        data-ng-model="form.req_software"
+                                >
+                                <span></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for=""> Tipo de Discadores</label>
+                                <span class="ui-select">
+                                    <select data-ng-model="form.tipo_discador">
+                                        <option value="predictivo">Discador predictivo</option>
+                                        <option value="potencia">Discador potencia</option>
+                                        <option value="manual">Discado manual</option>
+                                    </select>
+                              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider divider-dashed divider-lg pull-in"></div>
+                <div class="form-group">
+                    <label for="" class="col-sm-1">Notas</label>
+                    <div class="col-sm-11">
+                        <textarea name="" id="" class="form-control" rows="4" data-ng-model="form.notas_campana"></textarea>
+                    </div>
+                </div>
+            
+        </div>
+</section>            
+
+<!-- INICIO Botonera -->
+<section class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="btn-toolbar pull-right">
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-default" ng-click="volverContrCamps()">Cancelar</button>
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="asociarCampana()">Guardar Campaña</button>
+                       </div>
+                    </div>
+                </div>
+        </div>
+</section>
+<!-- FIN Botonera -->
+
+</div>
+    
+<!-- </div> -->

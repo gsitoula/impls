@@ -1,0 +1,38 @@
+<section class="panel panel-default">
+<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Carga Responsables Clientes</strong></div>
+    <div class="panel-body">
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-md-12">
+                    <button ng-click="nuevoComercial()" class="btn btn-primary btn-round btn-w-md btn-gap-v pull-right">
+                        <span class="glyphicon glyphicon-arrow-down"></span>Carga Resp. Cliente</button>
+                    </div>
+                </div> 
+            </div>
+            <table ng-table="tableComerciales" class="table table-striped" show-filter="true">
+                <tr ng-repeat="comercial_cliente in $data">
+                    <td title="'Cliente'" filter="{CLIENTE:'text'}" sortable="'CLIENTE'">
+                        {{comercial_cliente.NOMBRE_CLIENTE}}
+                    </td>
+                    <td title="'Puesto'" filter="{PUESTO:'text'}" sortable="'PUESTO'">
+                        {{comercial_cliente.PUESTO}}
+                    </td>
+                    <td title="'Perfil'" filter="{PERFIL:'text'}" sortable="'PERFIL'">
+                        {{comercial_cliente.PERFIL}}
+                    </td>
+                    <td title="'Nombre y Apellido'" filter="{NOMBRE_APELLIDO:'number'}" sortable="'NOMBRE_APELLIDO'">
+                        {{comercial_cliente.NOMBRE_APELLIDO}}
+                    </td>
+                    <td title="'Teléfono'" filter="{TELEFONO:'text'}" sortable="'TELEFONO'">
+                        {{comercial_cliente.TELEFONO}}
+                    </td>
+                    <td title="'Email'" filter="{EMAIL:'text'}" sortable="'EMAIL'">
+                        {{comercial_cliente.EMAIL}}
+                    </td>
+                    <td title="'Skype ID'" filter="{SKYPE_ID:'text'}" sortable="'SKYPE_ID'">
+                        {{comercial_cliente.SKYPE_ID}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+</section>        

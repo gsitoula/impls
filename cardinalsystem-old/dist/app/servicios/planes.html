@@ -1,0 +1,165 @@
+
+<div class="page page-table" data-ng-controller="tableCtrl">
+
+    <section class="panel panel-default table-dynamic">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Planes</strong></div>
+
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-9 col-xs-9">
+                    <form>
+                        <input type="text"
+                               placeholder="Buscar..."
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+                <div class="col-sm-3 col-xs-3 text-center">
+                    
+					<!-- pull-right -->
+					
+					<button type="button" class="btn btn-w-md btn-gap-v btn-round btn-default text-center ">
+					<span class="glyphicon glyphicon-plus"></span> Nuevo Plan</button>
+					<!-- <span>
+                        <!-- Showing {{filteredStores.length}}/{{stores.length}} entries -->
+                    <!-- </span>   -->           
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+                <tr>
+				
+				  <th><div class="th">
+                        Id
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('rating') "
+                              data-ng-class="{active: row == 'rating'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-rating') "
+                              data-ng-class="{active: row == '-rating'}"></span>
+                    </div></th>
+				
+				
+                    <th><div class="th">
+                        Plan
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('name') "
+                              data-ng-class="{active: row == 'name'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-name') "
+                              data-ng-class="{active: row == '-name'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Precio
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('price') "
+                              data-ng-class="{active: row == 'price'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-price') "
+                              data-ng-class="{active: row == '-price'}"></span>
+                    </div></th>
+                    <th><div class="th">
+                        Edición
+                        <span class="fa fa-angle-up"
+                              data-ng-click=" order('sales') "
+                              data-ng-class="{active: row == 'sales'}"></span>
+                        <span class="fa fa-angle-down"
+                              data-ng-click=" order('-sales') "
+                              data-ng-class="{active: row == '-sales'}"></span>
+                    </div></th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+				    <td>001</td>
+                    <td>Cardinal Multiassistance Basic</td>
+                    <td>99.90</td>
+                    <td class="text-center">
+					
+					<a href="" class="btn-icon-lined btn-icon-round btn-icon-sm btn-info">
+					<span class="glyphicon glyphicon-pencil"
+                                      data-ng-click="edit(task)"></span></a>
+									  
+					<a href="" class="btn-icon-lined btn-icon-round btn-icon-sm btn-info">
+                                <span class="glyphicon glyphicon-remove"
+                                      data-ng-click="remove(task, $index)"
+                                      ></span></a>
+					</td>
+
+                </tr>
+				
+                <tr >
+				    <td>002</td>
+                    <td>Cardinal Multiassistance Plus</td>
+                    <td>129.90</td>
+                    <td class="text-center">
+					
+					
+					<a href="" class="btn-icon-lined btn-icon-round btn-icon-sm btn-info">
+					<span class="glyphicon glyphicon-pencil"
+                                      data-ng-click="edit(task)"></span></a>
+									  
+									  
+					<a href="" class="btn-icon-lined btn-icon-round btn-icon-sm btn-info">
+                                <span class="glyphicon glyphicon-remove"
+                                      data-ng-click="remove(task, $index)"
+                                      ></span></a>
+					
+					</td>
+
+                </tr>
+				
+	                <tr >
+				    <td>003</td>
+                    <td>Cardinal Multiassistance Full</td>
+                    <td>179.90</td>
+                    <td class="text-center">
+					
+					
+					<a href="" class="btn-icon-lined btn-icon-round btn-icon-sm btn-info">
+					<span class="glyphicon glyphicon-pencil"
+                                      data-ng-click="edit(task)"></span></a>
+									  
+					<a href="" class="btn-icon-lined btn-icon-round btn-icon-sm btn-info">
+                                <span class="glyphicon glyphicon-remove"
+                                      data-ng-click="remove(task, $index)"
+                                      ></span></a>
+					
+					</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+                    <span>
+                        Show 
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+                        </select> 
+                        entries per page
+                    </span>
+                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <uib-pagination class="pagination-sm"
+                                ng-model="currentPage"
+                                total-items="filteredStores.length"
+                                max-size="4"
+                                ng-change="select(currentPage)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                previous-text="&lsaquo;" next-text="&rsaquo;"
+                                boundary-links="true"></uib-pagination>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+</div>

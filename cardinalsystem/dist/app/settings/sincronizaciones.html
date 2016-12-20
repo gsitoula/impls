@@ -1,0 +1,52 @@
+<div class="page" data-ng-controller="sincronizacionesCtrl">
+ 
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Sincronización</strong></div>
+        <div class="panel-body">
+        	<div class="container col-md-12">	
+				<div class="row">
+					<table class="table table-bordered">
+						<thead class="thead-default">
+							<th>
+								Sincronizar 
+							</th>
+							<th> 
+								Realizar
+							</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Clientes Tango</td>
+								<td>
+									<button class="btn btn-default btn-round" data-ng-class="[pickChosen == 1 ? 'btn-success' : 'btn-default']" ng-click="sincTango()">Sincronizar</button>
+									<span class={{sincroSuccessIcon}}></span><span> {{sincroSuccess}}</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Grupos Active Directory</td>
+								<td>
+									<button class="btn btn-default btn-round" data-ng-class="[pickAd == 1 ? 'btn-success' : 'btn-default']" ng-click="sincAd()">Sincronizar</button>
+									<span class={{sincroAdSuccessIcon}}></span><span> {{sincroAdSuccess}}</span>
+								</td>
+							</tr>
+						</tbody>	
+					</table>
+				</div>
+        	</div> 
+        </div>
+    </section>
+
+    <section class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <div class="btn-toolbar pull-right">
+                  <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-default" ng-click="returnAdmin()">Volver a Administración</button>
+              </div>
+          </div>
+      </div>
+ 	</div>
+	</section>
+</div>

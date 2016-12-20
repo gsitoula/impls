@@ -1,0 +1,51 @@
+<div id="ventas" class="page" data-ng-controller="tablaContratosCtrl">
+    <!-- INICIO SECCION CAMPAÑAS ASIGNADAS -->
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Contratos</strong></div>
+        <div class="panel-body">
+            <div class="table-filters">
+            <div class="row">
+                <div class="col-md-12">
+                <!--<div class="col-md-2">-->
+                    <button ng-click="nuevoContrato()" class="btn btn-primary btn-round btn-w-md btn-gap-v pull-right">
+                    <span class="ti-plus"></span></button>
+                <!--</div>-->
+                </div>
+            </div> 
+        </div> 
+        <table ng-table="tableContratos" class="table table-striped" show-filter="true">
+            <tr ng-repeat="contrato in $data">
+                
+                <td title="'Cliente'" filter="{CLIENTE:'text'}" sortable="'CLIENTE'">
+                    {{contrato.CLIENTE}}
+                </td>
+
+                <td title="'Estado de Contrato'" filter="{ESTADO:'text'}" sortable="'ESTADO'">
+                    {{contrato.datos_contrato.contrato_status}}
+                </td>
+                    
+                <td title="'Ver Contrato'">
+                    <div>
+                        <button class="btn btn-default btn-round" ng-click="verContrato(contrato.datos_contrato.contrato_scaneado)"><i class="ti-receipt"></i></button><span>  </span>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+        </div>
+    </section>
+    <!-- FIN SECCION CAMPAÑAS ASIGNADAS -->
+    <section class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="btn-toolbar pull-right">
+                          <button type="button" class="btn btn-w-md btn-gap-v btn-round btn-primary" ng-click="volverMain()">Volver</button>
+                       </div>
+                    </div>
+                </div>
+        </div>
+</section>
+</div>

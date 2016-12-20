@@ -1,0 +1,35 @@
+<div class="page page-form" ng-controller="uploadContratoCtrl">
+
+	<!-- <div class="panel panel-default" data-ng-controller="formConstraintsCtrl"> -->
+
+	<section class="panel panel-default">
+
+		<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Contrato</strong></div>
+		<div class="panel-body">
+			<!-- ng-app="fileUpload" ng-controller="MyCtrl" -->
+			<form  name="form">
+				<input type="text" ng-disabled="true" value={{archivo.name}} />
+				<button class="button" ngf-select ng-model="archivo" name="file" ngf-pattern="'image/*,application/pdf'"
+				ngf-accept="'image/*,application/pdf'" ngf-max-size="200MB">Seleccionar archivo</button>
+				<button type="submit" ng-click="submit()">Procesar y Guardar</button>
+			</form>
+
+			<!--
+			ngf-min-height="100" 
+				ngf-resize="{width: 100, height: 100}" ngf-no-object-url="true"
+			<div class="button" ngf-select="upload($file)">Upload on file select</div>
+			<div class="button" ngf-select="uploadFiles($files)" multiple="multiple">Upload on file select</div>
+			Drop File:
+			<div ngf-drop="uploadFiles($files)" class="drop-box"
+			ngf-drag-over-class="'dragover'" ngf-multiple="true" 
+			ngf-pattern="'image/*,application/pdf'">Drop Images or PDFs files here</div>
+			<div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+			-->
+			<!--
+			Image thumbnail: <img ngf-thumbnail="file || '/thumb.jpg'">
+			Audio preview: <audio controls ngf-src="file"></audio>
+			Video preview: <video controls ngf-src="file"></video>
+			-->
+		</div>
+	</section>
+</div>        
